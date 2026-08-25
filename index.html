@@ -3,7 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="preload" as="image" href="page1.png">
+
 <title>The Argenta Belle — Then and Now</title>
+
 <style>
   :root {
     --navy:#071d3a;
@@ -11,16 +15,36 @@
     --cream:#f5efe2;
     --red:#8f241e;
   }
-  * { box-sizing:border-box; }
-  html { scroll-behavior:smooth; }
+
+  * {
+    box-sizing:border-box;
+  }
+
+  html {
+    scroll-behavior:smooth;
+  }
+
   body {
     margin:0;
     background:
       radial-gradient(circle at top, rgba(197,138,34,.12), transparent 35%),
       linear-gradient(180deg, #061a33 0%, #0b2748 48%, #061a33 100%);
     color:#17253a;
-    font-family: Georgia, "Times New Roman", serif;
+    font-family:Georgia, "Times New Roman", serif;
   }
+
+  /*
+    Hide the website structure until Page 1 is ready.
+    This prevents the brief flash of the page without pictures.
+  */
+  body.loading .site-content {
+    visibility:hidden;
+  }
+
+  body.ready .site-content {
+    visibility:visible;
+  }
+
   header {
     position:sticky;
     top:0;
@@ -31,6 +55,7 @@
     padding:12px 18px;
     text-align:center;
   }
+
   .brand {
     color:#f4c65e;
     font-size:clamp(20px, 3vw, 34px);
@@ -38,6 +63,7 @@
     letter-spacing:2px;
     margin-bottom:8px;
   }
+
   .subtitle {
     color:#fff8e8;
     font-size:14px;
@@ -45,12 +71,14 @@
     text-transform:uppercase;
     margin-bottom:10px;
   }
+
   nav {
     display:flex;
     justify-content:center;
     gap:8px;
     flex-wrap:wrap;
   }
+
   nav a {
     display:inline-block;
     min-width:38px;
@@ -62,11 +90,16 @@
     font-weight:bold;
     background:#102f52;
   }
-  nav a:hover { background:#8f241e; }
+
+  nav a:hover {
+    background:#8f241e;
+  }
+
   main {
     width:min(1120px, 94vw);
     margin:28px auto 50px;
   }
+
   .intro {
     color:#fff8e8;
     text-align:center;
@@ -74,12 +107,18 @@
     max-width:850px;
     line-height:1.6;
   }
+
   .intro h1 {
     margin:0 0 6px;
     color:#f4c65e;
     font-size:clamp(28px, 5vw, 48px);
   }
-  .intro p { margin:0; font-size:16px; }
+
+  .intro p {
+    margin:0;
+    font-size:16px;
+  }
+
   .page-card {
     position:relative;
     margin:0 auto 32px;
@@ -93,12 +132,14 @@
     border-radius:3px;
     scroll-margin-top:145px;
   }
+
   .page-card img {
     display:block;
     width:100%;
     height:auto;
     border:1px solid #17385d;
   }
+
   .page-number {
     position:absolute;
     right:18px;
@@ -111,6 +152,7 @@
     font:700 11px/1 Arial, sans-serif;
     letter-spacing:1px;
   }
+
   footer {
     color:#fff8e8;
     text-align:center;
@@ -118,73 +160,193 @@
     font-size:14px;
     opacity:.9;
   }
+
   @media (max-width:700px) {
-    header { position:static; }
-    main { width:96vw; margin-top:20px; }
+
+    header {
+      position:static;
+    }
+
+    main {
+      width:96vw;
+      margin-top:20px;
+    }
+
     .page-card {
       padding:7px;
       margin-bottom:22px;
-      box-shadow:0 0 0 3px var(--navy), 0 0 0 5px #ead7a6, 0 10px 24px rgba(0,0,0,.3);
+      box-shadow:
+        0 0 0 3px var(--navy),
+        0 0 0 5px #ead7a6,
+        0 10px 24px rgba(0,0,0,.3);
       scroll-margin-top:20px;
     }
-    .page-number { right:12px; top:12px; font-size:9px; }
+
+    .page-number {
+      right:12px;
+      top:12px;
+      font-size:9px;
+    }
   }
 </style>
 </head>
-<body>
+
+<body class="loading">
+
+<div class="site-content">
+
 <header>
   <div class="brand">THE ARGENTA BELLE</div>
-  <div class="subtitle">Then and Now • The Story Behind the Train</div>
-  <nav aria-label="Page navigation"><a href="#page-1">1</a>
-<a href="#page-2">2</a>
-<a href="#page-3">3</a>
-<a href="#page-4">4</a>
-<a href="#page-5">5</a></nav>
+
+  <div class="subtitle">
+    Then and Now • The Story Behind the Train
+  </div>
+
+  <nav aria-label="Page navigation">
+    <a href="#page-1">1</a>
+    <a href="#page-2">2</a>
+    <a href="#page-3">3</a>
+    <a href="#page-4">4</a>
+    <a href="#page-5">5</a>
+  </nav>
 </header>
 
 <main>
+
   <div class="intro">
     <h1>The Argenta Belle</h1>
-    <p>A five-page historical presentation of the train, its Chance Manufacturing heritage,
-       its years of operation, and its 2001 move into the care of North Little Rock.</p>
+
+    <p>
+      A five-page historical presentation of the train, its Chance Manufacturing heritage,
+      its years of operation, and its 2001 move into the care of North Little Rock.
+    </p>
   </div>
 
-  
-      <section class="page-card" id="page-1">
-        <div class="page-number">PAGE 1 OF 5</div>
-        <img src="page1.png" alt="The Argenta Belle — The Story Behind the Train">
-      </section>
-    
-      <section class="page-card" id="page-2">
-        <div class="page-number">PAGE 2 OF 5</div>
-        <img src="page2.png" alt="The Argenta Belle — Then and Now" loading="lazy">
-      </section>
-    
-      <section class="page-card" id="page-3">
-        <div class="page-number">PAGE 3 OF 5</div>
-        <img src="page3.png" alt="The Argenta Belle — A Timeline of History" loading="lazy">
-      </section>
-    
-      <section class="page-card" id="page-4">
-        <div class="page-number">PAGE 4 OF 5</div>
-        <img src="page4.png" alt="The Argenta Belle — A New Home, 2001" loading="lazy">
-      </section>
-    
-      <section class="page-card" id="page-5">
-        <div class="page-number">PAGE 5 OF 5</div>
-        <img src="page5.png" alt="The Argenta Belle — Allan Herschell Company Documentation" loading="lazy">
-      </section>
-    
 
-<div style="text-align:center;margin:22px auto 30px">
-<a href="Argenta_Belle_Five_Page_Email_Compressed.pdf"
-style="display:inline-block;padding:11px 18px;background:#8f241e;color:#fff8e8;border:1px solid #c58a22;border-radius:4px;text-decoration:none;font-weight:bold">
-Download the 5-Page PDF
-</a></div>
+  <section class="page-card" id="page-1">
+    <div class="page-number">PAGE 1 OF 5</div>
+
+    <img
+      src="page1.png"
+      alt="The Argenta Belle — The Story Behind the Train"
+      fetchpriority="high">
+  </section>
+
+
+  <section class="page-card" id="page-2">
+    <div class="page-number">PAGE 2 OF 5</div>
+
+    <img
+      src="page2.png"
+      alt="The Argenta Belle — Then and Now"
+      loading="lazy">
+  </section>
+
+
+  <section class="page-card" id="page-3">
+    <div class="page-number">PAGE 3 OF 5</div>
+
+    <img
+      src="page3.png"
+      alt="The Argenta Belle — A Timeline of History"
+      loading="lazy">
+  </section>
+
+
+  <section class="page-card" id="page-4">
+    <div class="page-number">PAGE 4 OF 5</div>
+
+    <img
+      src="page4.png"
+      alt="The Argenta Belle — A New Home, 2001"
+      loading="lazy">
+  </section>
+
+
+  <section class="page-card" id="page-5">
+    <div class="page-number">PAGE 5 OF 5</div>
+
+    <img
+      src="page5.png"
+      alt="The Argenta Belle — Allan Herschell Company Documentation"
+      loading="lazy">
+  </section>
+
+
+  <div style="text-align:center;margin:22px auto 30px">
+
+    <a
+      href="Argenta_Belle_Five_Page_Email_Compressed.pdf"
+      style="
+        display:inline-block;
+        padding:11px 18px;
+        background:#8f241e;
+        color:#fff8e8;
+        border:1px solid #c58a22;
+        border-radius:4px;
+        text-decoration:none;
+        font-weight:bold;
+      ">
+      Download the 5-Page PDF
+    </a>
+
+  </div>
+
 </main>
 
 <footer>
   The Argenta Belle • Burns Park • North Little Rock, Arkansas
 </footer>
+
+</div>
+
+
+<script>
+(function () {
+
+  const firstImage = document.querySelector("#page-1 img");
+
+  function revealPage() {
+    document.body.classList.remove("loading");
+    document.body.classList.add("ready");
+  }
+
+  if (!firstImage) {
+    revealPage();
+    return;
+  }
+
+  /*
+    If Page 1 is already cached, reveal the site immediately.
+  */
+  if (firstImage.complete && firstImage.naturalWidth > 0) {
+    revealPage();
+    return;
+  }
+
+  /*
+    Otherwise wait until Page 1 has finished loading.
+  */
+  firstImage.addEventListener("load", revealPage, {
+    once:true
+  });
+
+  /*
+    If the image fails for some reason, still allow the website
+    to appear rather than leaving the visitor with a blank screen.
+  */
+  firstImage.addEventListener("error", revealPage, {
+    once:true
+  });
+
+  /*
+    Safety fallback. If something unusual happens with the browser
+    or network, don't keep the website hidden indefinitely.
+  */
+  setTimeout(revealPage, 10000);
+
+})();
+</script>
+
 </body>
 </html>
