@@ -228,13 +228,42 @@
 
   @media (max-width:700px) {
 
+    /*
+      Keep the navigation available while scrolling on phones.
+      The header remains compact so it does not take over the screen.
+    */
     header {
-      position:static;
+      position:sticky;
+      top:0;
+      z-index:10;
+      padding:8px 10px;
+    }
+
+    .brand {
+      font-size:20px;
+      margin-bottom:5px;
+      letter-spacing:1.5px;
+    }
+
+    .subtitle {
+      font-size:10px;
+      letter-spacing:1.5px;
+      margin-bottom:7px;
+    }
+
+    nav {
+      gap:5px;
+    }
+
+    nav a {
+      min-width:34px;
+      padding:5px 8px;
+      font-size:13px;
     }
 
     main {
       width:96vw;
-      margin-top:20px;
+      margin-top:18px;
     }
 
     .page-card {
@@ -244,7 +273,7 @@
         0 0 0 3px var(--navy),
         0 0 0 5px #ead7a6,
         0 10px 24px rgba(0,0,0,.3);
-      scroll-margin-top:20px;
+      scroll-margin-top:105px;
     }
 
     .page-number {
